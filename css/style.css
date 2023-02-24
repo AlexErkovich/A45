@@ -316,18 +316,22 @@ body {
     font-weight: 500;
     font-size: 12px;
     line-height: 28px;
-    
+
 
 }
 
 /* Всплывающая форма-скрыта по умолчанию */
 .form-popup {
-    width: 1020px;
     position: absolute;
-    margin-left: 170px;
-    margin-bottom: auto;
-    
-    
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h2 {
@@ -337,7 +341,7 @@ h2 {
     font-size: 20px;
     line-height: 28px;
 
-  
+
 }
 .title__form{
     display: flex;
@@ -361,21 +365,21 @@ h2 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    
-    
+
+
 }
 
 .text-priemi{
     display: flex;
     flex-direction: column;
     width: 100%;
-    
+
 }
 
 /* Добавить стили для контейнера формы */
 .form-container {
-   
-    
+    width: 600px;
+    height: 600px;
     padding: 16px;
     background-color: white;
     border: 3px solid #000000;
@@ -407,7 +411,7 @@ h2 {
 /* Когда входы получают фокус, сделайте что-нибудь */
 .form-container input[type=text]:focus,
 .form-container input[type=password]:focus {
-   
+
     width: 100%;
     background-color: #ddd;
     outline: none;

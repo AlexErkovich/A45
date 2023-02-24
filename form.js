@@ -1,15 +1,30 @@
 // из-за копировании текста зи телеграмма при вставке произошли корявые изменения с кавычками, поправил и теперь всё норм
 const btn = document.querySelector('.js-myButton')
+const formOverlay = document.getElementById('myForm')
+const formContent = formOverlay.querySelector('.form-container')
+const formCloseBtn = formContent.querySelector('#js-form_close')
 
 function openForm () {
-  document.getElementById('myForm').style.display = 'block'
+  formOverlay.style.visibility = 'visible'
 }
 
 function closeForm () {
-  document.getElementById('myForm').style.display = 'none'
+  formOverlay.style.visibility = 'hidden'
 }
 
 btn.addEventListener('click', () => {
     openForm()
   },
 )
+
+formContent.addEventListener('click', event => {
+  event.stopPropagation()
+})
+
+formOverlay.addEventListener('click', event => {
+  closeForm()
+})
+
+formCloseBtn.addEventListener('click', event => {
+  closeForm()
+})
