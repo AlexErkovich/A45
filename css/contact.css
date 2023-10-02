@@ -1,0 +1,168 @@
+/*—————————————————| CONTACT PAGE |——————————————————————————————————*/
+
+.contact__block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 8%;
+    align-items: center;
+    font-family: 'Helvetica';
+    font-weight: 300px;
+
+}
+
+.contact__block__email {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: var(--blurcolors-blue-blur, rgba(10, 100, 203, 0.56));
+    backdrop-filter: blur(10px);
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0px 32px 0px 24px;
+
+    border-radius: 16px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+
+    animation: phone 2s forwards;
+}
+
+@keyframes phone {
+
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+
+    }
+
+}
+
+.contact__block__telegram {
+    display: flex;
+    flex-direction: row;
+    background: var(--blurcolors-blue-blur, rgba(10, 100, 203, 0.56));
+    backdrop-filter: blur(10px);
+
+    width: 100%;
+    height: fit-content;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0px 32px 0px 24px;
+
+    border-radius: 16px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+
+    animation: phone 6s forwards;
+}
+
+@keyframes phone {
+
+    0% {
+        opacity: 0;
+        top: -50%
+    }
+
+    100% {
+        opacity: 1;
+        top: 50%
+    }
+
+}
+
+.send {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+
+}
+
+/*—————————————————| 414px |——————————————————————————————————
+@media (max-width: 414px) {
+
+    .contact__block {
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        margin: 20% 16% 0% 16%;
+        
+
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 30px;
+        font-family: 'Helvetica';
+    }
+
+
+    .contact__block__email {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+    }
+
+    .contact__block__telegram {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        
+    }
+
+}
+*/
+
+
+/*—————————————————| 320px — 480px |——————————————————————————————————*/
+
+@media screen and (min-width: 320px) and (max-width: 480px)  {
+
+    .contact__block {
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 20% 12% 0% 12%;
+       
+    }
+
+    .contact__block__email {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        font: 18px/1.5 Helvetica, sans-serif;
+    }
+
+    .contact__block__telegram {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        font: 18px/1.5 Helvetica, sans-serif;
+        
+    }
+
+    .btn__left {
+        font-size: 14px;
+    }
+    
+   
+    .btn__right {
+        font-size: 14px;
+    }
+    
+    
+}
