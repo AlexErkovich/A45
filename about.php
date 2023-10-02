@@ -94,7 +94,7 @@
       redesigned existing functionality, organized a UI library of components, conducted competitive analysis, created
       project presentations. I am convinced that a good product begins with well-organized work and communication in a
       team.</p>
-
+<button onclick="openPageAboutProject()" >Other my project</button>
   </section>
   <script>
     let menuBtn = document.querySelector('.menu-btn');
@@ -102,6 +102,10 @@
     menuBtn.addEventListener('click', function () {
       menu.classList.toggle('active');
     })
+
+    function openPageAboutProject(){
+      
+    }
   </script>
 
 </body>
