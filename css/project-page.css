@@ -1,0 +1,98 @@
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        
+
+        .content__main__project {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            margin-top: 20px;
+            gap: 32px;
+            width: 100%;
+            overflow-y: scroll;
+        }
+
+
+        
+        .content__project {
+            display: flex;
+            justify-content: space-between;
+            border-radius: 16px;
+            margin-bottom: 10px;
+            width: 80%;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            background: rgba(10, 100, 203, 0.56);
+            
+
+        }
+
+        .content__project__block{
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .content__project:hover{
+           cursor: pointer;
+           background-color: #1b1b1b ;
+        }
+
+        .content__project img {
+            width: 160px;
+            height: 80px;
+            border-radius: 16px;
+            margin-right: 20px;
+            filter: grayscale(100%);
+        }
+
+        .content__project img:hover {
+            filter: grayscale(0%);
+        }
+
+
+        .content__project__block__text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .card-details{
+            background: rgba(10, 100, 203, 0.56);
+            padding: 24px;
+            border-radius: 16px;
+        }
+
+        .content__project h2 {
+            font-size: 1.5em;
+            margin: 0;
+            color: #7db1ff;
+            
+        }
+
+        .content__project p {
+            margin: 0;
+            color: #FFF;
+            font-family: 'Helvetica';
+            font-weight: 100;
+            line-height: 18px;
+            font-size: 16px;
+            width: 60%;
+        }
+    
+
+        span{
+            color: #FFF;
+            padding: 4px 24px;
+            border: 1px solid #fafafa;
+            border-radius: 32px;
+            width: fit-content;
+            height: fit-content;
+        }

@@ -45,7 +45,7 @@ header {
 }
 
 .nav {
-    display: flex;
+    display: none;
     justify-content: right;
     width: 100%;
 
@@ -72,8 +72,6 @@ header {
     display: none;
 
 }
-
-
 
 .menu-btn {
     display: none;

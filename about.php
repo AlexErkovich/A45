@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/about.css">
-  <link rel="stylesheet" href="css/root.css">
+  
   <title>About</title>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -103,9 +104,14 @@
       menu.classList.toggle('active');
     })
 
-    function openPageAboutProject(){
-      
-    }
+    function openPageAboutProject() {
+  // Указываете URL страницы, которую хотите открыть
+  var url = 'project-page.php'; // Замените на нужный URL
+
+  // Открывает новое окно или вкладку браузера с указанным URL
+  window.open(url, '_blank');
+}
+
   </script>
 
 </body>
