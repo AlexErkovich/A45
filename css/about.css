@@ -52,6 +52,24 @@
 
 }
 
+button {
+    background-color: #1d70ff;
+    color: #fff;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    font-size: 16px;
+    font-weight: 300;
+    height: fit-content;
+    width: fit-content;
+
+    padding: 8px 32px;
+}
+
+button {
+    background-color: #0051db;
+    cursor: pointer;
+}
+
 /*—————————————————| 414px |——————————————————————————————————*/
 
 @media (max-width: 414px) {
@@ -69,3 +87,4 @@
 
 
 }
+

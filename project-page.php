@@ -54,16 +54,16 @@
             <!-- Десктопное меню -->
             <ul class="nav">
                 <li class="nav__links">
-                    <a href="works.html" class="links">Работы</a>
+                    <a href="works.html" class="links">Works</a>
                 </li>
                 <li class="nav_list">
-                    <a href="price.html" class="links">Цены</a>
+                    <a href="price.html" class="links">Price</a>
                 </li>
                 <li class="nav_list">
-                    <a href="contact.html" class="links">Контакты</a>
+                    <a href="contact.html" class="links">Contact</a>
                 </li>
                 <li class="nav_list">
-                    <a href="about.html" class="links">О нас</a>
+                    <a href="about.html" class="links">About</a>
                 </li>
             </ul>
         </nav>
@@ -72,21 +72,58 @@
     <!-- Мобильное меню которое появляется-->
     <ul id="layer2" class="mobile-menu">
         <li class="mobile-menu__nav__links">
-            <a href="works.html" class="links">Работы</a>
+            <a href="works.html" class="links">Works</a>
         </li>
         <li class="mobile-menu__nav__links">
-            <a href="price.html" class="links">Цены</a>
+            <a href="price.html" class="links">Price</a>
         </li>
         <li class="mobile-menu__nav__links">
-            <a href="contact.html" class="links">Контакты</a>
+            <a href="contact.html" class="links">Contact</a>
         </li>
         <li class="mobile-menu__nav__links">
-            <a href="about.html" class="links">О нас</a>
+            <a href="about.html" class="links">About</a>
         </li>
     </ul>
     <!-- Мобильное меню которое появляется конец-->
+    <div class="content__main__project__tab">
+            <?php
+            $servername = "localhost";
+            $username = "Alex";
+            $password = "12345";
+            $dbname = "a45";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            if ($conn->connect_error) {
+                die("Ошибка подключения: " . $conn->connect_error);
+            }
+
+            function displayTab($conn)
+            {
+                $sql = "SHOW TABLES";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo '
+                    <div class="tab">
+                        <span class="table-span">' . $row['Tables_in_a45'] . '</span>
+                    </div>';
+                    }
+                } else {
+                    echo "0 результатов для таблицы";
+                }
+            }
+
+            displayTab($conn);
+
+            $conn->close();
+            ?>
+        </div>
 
     <section id="layer2" class="content__main__project">
+        
+
         <?php
         $servername = "localhost";
         $username = "Alex";
@@ -99,32 +136,35 @@
             die("Ошибка подключения: " . $conn->connect_error);
         }
 
-        $table_name = "art";  // Название таблицы
+        function displayTable($conn, $table_name)
+        {
+            $sql = "SELECT * FROM $table_name";
+            $result = $conn->query($sql);
 
-        $sql = "SELECT * FROM " . $table_name;  // Используем название таблицы в SQL-запросе
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                // Проверяем, есть ли изображение
-                $imageData = $row["img"] ? base64_encode($row["img"]) : '';
-                echo '
-            <div class="content__project" onclick="openDetailsPage(' . $row["id"] . ',\'' . $table_name . '\')">
-                <div class="content__project__block">
-                    <img src="data:image/jpeg;base64,' . $imageData . '" style="width: 220px; height: fit-content; border-radius:16px;" alt="Изображение">
-                    <div class="content__project__block__text">
-                        <h2>' . $row["title"] . '</h2>
-                        <p>' . $row["description"] . '</p>
-                    </div>
-                    <span>' . $table_name . '</span> <!-- Выводим название таблицы -->
-                </div>
-            </div>';
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $imageData = $row["img"] ? base64_encode($row["img"]) : '';
+                    echo '<div class="content__project ' . $table_name . '">
+                            <div class="content__project__block" onclick="openDetailsPage(' . $row["id"] . ',\'' . $table_name . '\')">
+                                <img src="data:image/jpeg;base64,' . $imageData . '" style="width: 220px; height: fit-content; border-radius:16px;" alt="Изображение">
+                                <div class="content__project__block__text">
+                                    <h2>' . $row["title"] . '</h2>
+                                    <p>' . $row["description"] . '</p>
+                                </div>
+                                <span class="table-span">' . $table_name . '</span> <!-- Выводим название таблицы -->
+                            </div>
+                        </div>';
+                }
+            } else {
+                echo "0 результатов для таблицы $table_name";
             }
-        } else {
-            echo "0 результатов";
         }
 
-        // Закрываем соединение
+        $table_names = array("art", "tech" , "pedagogy" , "photo");  // Добавьте сюда другие названия таблиц
+        foreach ($table_names as $table_name) {
+            displayTable($conn, $table_name);
+        }
+
         $conn->close();
         ?>
     </section>
@@ -134,6 +174,26 @@
         let menu = document.querySelector('.mobile-menu');
         menuBtn.addEventListener('click', function() {
             menu.classList.toggle('active');
+        });
+
+        const tableSpans = document.querySelectorAll('.table-span');
+
+        function showTableContent(table_name) {
+            const allProjects = document.querySelectorAll('.content__project');
+            allProjects.forEach(project => {
+                project.style.display = 'none';
+            });
+            const selectedProjects = document.querySelectorAll('.' + table_name);
+            selectedProjects.forEach(project => {
+                project.style.display = 'block';
+            });
+        }
+
+        tableSpans.forEach(span => {
+            span.addEventListener('click', function() {
+                const tableName = span.innerText;
+                showTableContent(tableName);
+            });
         });
 
         function openDetailsPage(cardId, tableName) {

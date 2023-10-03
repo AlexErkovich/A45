@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -54,16 +54,16 @@
             <!-- Десктопное меню -->
             <ul class="nav">
                 <li class="nav__links">
-                    <a href="works.html" class="links">Works</a>
+                    <a href="works.html" class="links">Работы</a>
                 </li>
                 <li class="nav_list">
-                    <a href="price.html" class="links">Price</a>
+                    <a href="price.html" class="links">Цены</a>
                 </li>
                 <li class="nav_list">
-                    <a href="contact.html" class="links">Contact</a>
+                    <a href="contact.html" class="links">Контакты</a>
                 </li>
                 <li class="nav_list">
-                    <a href="about.html" class="links">About</a>
+                    <a href="about.html" class="links">О нас</a>
                 </li>
             </ul>
         </nav>
@@ -72,39 +72,35 @@
     <!-- Мобильное меню которое появляется-->
     <ul id="layer2" class="mobile-menu">
         <li class="mobile-menu__nav__links">
-            <a href="works.html" class="links">Works</a>
+            <a href="works.html" class="links">Работы</a>
         </li>
         <li class="mobile-menu__nav__links">
-            <a href="price.html" class="links">Price</a>
+            <a href="price.html" class="links">Цены</a>
         </li>
         <li class="mobile-menu__nav__links">
-            <a href="contact.html" class="links">Contact</a>
+            <a href="contact.html" class="links">Контакты</a>
         </li>
         <li class="mobile-menu__nav__links">
-            <a href="about.html" class="links">About</a>
+            <a href="about.html" class="links">О нас</a>
         </li>
     </ul>
     <!-- Мобильное меню которое появляется конец-->
 
     <section id="layer2" class="content__main__project">
-
         <?php
         $servername = "localhost";
         $username = "Alex";
         $password = "12345";
         $dbname = "a45";
 
-        
-
         $conn = new mysqli($servername, $username, $password, $dbname);
 
         if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+            die("Ошибка подключения: " . $conn->connect_error);
         }
 
         if (isset($_GET['table'])) {
             $tableName = $_GET['table'];
-            #echo '<h1>Задача по ' . $tableName . '</h1>';
         } else {
             echo '<h1></h1>';
         }
@@ -118,20 +114,21 @@
 
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
-                echo '<div onclick="openDetailsPage(cardId, tableName)" class="card-details">';
+                echo '<div class="card__details">';
+                echo ' <img src="data:image/jpeg;base64,' . base64_encode($row["img"]) . '" style="width: 100%; height: fit-content; border-radius:16px;" alt="Изображение">';
                 echo '<h2>' . $row["title"] . '</h2>';
-                echo '<p>' . $row["description"] . '</p>';
+                echo '<p>' . $row["content"] . '</p>';
+                echo ' <img src="data:image/jpeg;base64,' . base64_encode($row["img_img"]) . '" style="width: 100%; height: fit-content; border-radius:16px;" alt="Изображение">';
                 echo '</div>';
             } else {
-                echo "No detailed information found for the selected card.";
+                echo "Информация о выбранной карте не найдена.";
             }
         } else {
-            echo "Invalid card ID or table name.";
+            echo "Неверный идентификатор карты или название таблицы.";
         }
 
         $conn->close();
         ?>
-
     </section>
 
     <script>
