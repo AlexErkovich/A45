@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="yandex-verification" content="a8be0afde1abeb23" />
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/menu.css">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
-  <title>menu</title>
+  <title>ALEX ERKOVICH</title>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function (m, e, t, r, i, k, a) {
@@ -32,10 +33,10 @@
     <div><img src="https://mc.yandex.ru/watch/94733749" style="position:absolute; left:-9999px;" alt="" /></div>
   </noscript>
   <!-- /Yandex.Metrika counter -->
-
+<body>
   <header class="header">
     <nav class="menu">
-      <a href="index.html">
+      <a href="index.php">
         <div class="logo menu__logo"><img src="img/logo.svg" alt="logo"></div>
       </a>
       <div id="layer2" class="menu-btn">
@@ -58,7 +59,6 @@
           <a href="about.php" class="links">About</a>
         </li>
       </ul>
-
     </nav>
     </div>
   </header>

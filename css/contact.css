@@ -1,6 +1,6 @@
 /*—————————————————| CONTACT PAGE |——————————————————————————————————*/
 
-.contact__block {
+.contact {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -14,7 +14,7 @@
 
 }
 
-.contact__block__email {
+.contact__block {
     width: 100%;
     display: flex;
     flex-direction: row;

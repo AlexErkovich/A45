@@ -1,5 +1,6 @@
 <?php include('menu.php'); ?>
 <link rel="stylesheet" href="css/works.css">
+
   <section class="section__works__content">
     <h2> Designe and Frontend</h2>
     <!--work rvn-->
@@ -30,6 +31,3 @@
     })
   </script>
 
-</body>
-
-</html>
