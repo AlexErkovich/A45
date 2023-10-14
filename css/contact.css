@@ -34,6 +34,63 @@
     animation: phone 2s forwards;
 }
 
+.contact__block:hover {
+    background-color: #0f0306;
+    }
+
+    .contact__block__name-service{
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+        height: fit-content;
+    }
+
+    /*—————————————————| BUTTONS |——————————————————————————————————*/
+
+.btn__primary {
+    background-color: #1d70ff;
+    color: #fff;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    font-size: 16px;
+    font-weight: 300;
+    height: fit-content;
+  
+
+    padding: 8px 32px;
+   
+}
+
+.btn__primary:hover {
+    background-color: #0051db;
+    cursor: pointer;
+}
+
+
+
+
+.btn__secondary {
+    background-color: #E7375E;
+    color: #fff;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    font-size: 16px;
+    font-weight: 300;
+    height: fit-content;
+    
+    padding: 8px 32px;
+   
+}
+
+.btn__secondary:hover {
+    background-color: #af1d3d;
+    cursor: pointer;
+}
+
+
+
+
 @keyframes phone {
 
     0% {
@@ -48,27 +105,7 @@
 
 }
 
-.contact__block__telegram {
-    display: flex;
-    flex-direction: row;
-    background: var(--blurcolors-blue-blur, rgba(10, 100, 203, 0.56));
-    backdrop-filter: blur(10px);
 
-    width: 100%;
-    height: fit-content;
-
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0px 32px 0px 24px;
-
-    border-radius: 16px;
-    color: #fff;
-    font-size: 24px;
-    font-weight: 400;
-
-    animation: phone 6s forwards;
-}
 
 @keyframes phone {
 
@@ -88,43 +125,8 @@
     display: flex;
     flex-direction: row;
     gap: 12px;
-
+    align-items: center;
 }
-
-/*—————————————————| 414px |——————————————————————————————————
-@media (max-width: 414px) {
-
-    .contact__block {
-
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-
-        margin: 20% 16% 0% 16%;
-        
-
-        font-size: 20px;
-        font-weight: 300;
-        line-height: 30px;
-        font-family: 'Helvetica';
-    }
-
-
-    .contact__block__email {
-        display: flex;
-        flex-direction: column;
-        padding: 24px;
-    }
-
-    .contact__block__telegram {
-        display: flex;
-        flex-direction: column;
-        padding: 24px;
-        
-    }
-
-}
-*/
 
 
 /*—————————————————| 320px — 480px |——————————————————————————————————*/

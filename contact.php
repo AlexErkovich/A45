@@ -2,41 +2,51 @@
 <link rel="stylesheet" href="css/contact.css">
 
 <section class="contact">
-
   <!--Button Email-->
   <div class="contact__block">
-    <p> <i></i>a89005632281@yandex.ru</p>
+    <div class="contact__block__name-service">
+      <img style="width: 32px; height: 32px; border-radius: 16px;" src="img/yandex.png">
+      <p> a89005632281@yandex.ru</p>
+    </div>
     <div class="send">
-      <button onclick="copyEmail()" class="btn__left">Copy</button>
-      <a href="mailto:a89005632281@yandex.ru"><button class="btn__right">To write</button></a>
+      <button onclick="copyEmail()" class="btn__primary">Copy email</button>
+      <button onclick="sendEmail()" class="btn__secondary">To write</button>
+    </div>
+  </div>
+  <!--Button Email end-->
+  <!--Button Email-->
+  <div class="contact__block">
+    <div class="contact__block__name-service">
+      <img style="width: 32px; height: 32px; " src="img/telegram.png">
+      <p>@I_A45_I</p>
+    </div>
+    <div class="send">
+      <button onclick="copyTelegram()" class="btn__primary">Copy ID</button>
+      <button onclick="goToTelegram()" class="btn__secondary">To write</button>
     </div>
   </div>
   <!--Button Email end-->
 
-  <!--Button telegram-->
-  <div class="contact__block">
-    <p>@I_A45_I</p>
-    <div class="send">
-      <button onclick="copyTelegram()" class="btn__left">Copy</button>
-      <a target="_blank" href="https://t.me/lA_45l"><button class="btn__right">To write</button></a>
-    </div>
-  </div>
-  <!--Button telegram end-->
-
   <!--Button Bechance-->
   <div class="contact__block">
-    <p>Bechance</p>
+    <div class="contact__block__name-service">
+      <img style="width: 32px; height: 32px;" src="img/behance.png">
+      <p>Bechance</p>
+    </div>
     <div class="send">
-      <button onclick="goToBehance()" class="btn__left">Look</button>
+      <button onclick="goToBehance()" class="btn__primary">Look profile</button>
     </div>
   </div>
   <!--Button Bechance end-->
 
   <!--Button Github-->
   <div class="contact__block">
-    <p>Github</p>
+    <div class="contact__block__name-service">
+      <img style="width: 32px; height: 32px;" src="img/github.png">
+      <p>Github</p>
+    </div>
     <div class="send">
-      <button onclick="goToGithub()" class="btn__left">Look</button>
+      <button onclick="goToGithub()" class="btn__primary">Look profile</button>
     </div>
   </div>
   <!--Button Github end-->
@@ -45,19 +55,30 @@
 <script>
   function copyEmail() {
     navigator.clipboard.writeText("a89005632281@yandex.ru");
-    alert('Адрес моей почты скопирован');
+    alert('Адрес моей почты a89005632281@yandex.ru скопирован');
   }
+  // Вызываем функцию для открытия почтового клиента
+  function sendEmail() {
+    window.location.href = 'mailto:a89005632281@yandex.ru';
+  }
+
+
 
   function copyTelegram() {
     navigator.clipboard.writeText("@lA_45l");
-    alert('ID моего телеграм скопирован');
+    alert('ID моего телеграм lA_45l скопирован');
   }
 
   function goToBehance() {
-    window.open  ('https://www.behance.net/IA45I' , '_blank');
+    window.open('https://www.behance.net/IA45I', '_blank');
   }
-  function goToGithub() {
-    window.open ('https://github.com/AlexErkovich' , '_blank');
+
+  function goToBehance() {
+    window.open('https://www.behance.net/IA45I', '_blank');
+  }
+
+  function goToTelegram() {
+    window.open('https://t.me/lA_45l', '_blank');
   }
 </script>
 <script>
